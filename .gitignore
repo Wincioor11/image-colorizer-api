@@ -137,3 +137,6 @@ dmypy.json
 
 #static images
 static/images/
+
+#test
+api_test.py
