@@ -38,17 +38,11 @@ jedi==0.17.2
 Jinja2==2.11.2
 joblib==0.17.0
 jsonschema==3.2.0
-jupyter==1.0.0
-jupyter-client==6.1.7
-jupyter-console==6.2.0
-jupyter-core==4.6.3
-jupyterlab-pygments==0.1.2
 Keras==2.4.3
 Keras-Preprocessing==1.1.2
 kiwisolver==1.2.0
 Markdown==3.2.2
 MarkupSafe==1.1.1
-matplotlib==3.3.2
 mistune==0.8.4
 multidict==4.7.6
 nbclient==0.5.0
@@ -73,7 +67,6 @@ pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
 Pygments==2.7.1
-PyJWT==1.7.1
 pyparsing==2.4.7
 pyrsistent==0.17.3
 python-dateutil==2.8.1
@@ -93,7 +86,7 @@ six==1.15.0
 sklearn==0.0
 tensorboard==2.3.0
 tensorboard-plugin-wit==1.7.0
-tensorflow==2.3.1
+tensorflow-cpu==2.3.1
 tensorflow-estimator==2.3.0
 termcolor==1.1.0
 terminado==0.9.1

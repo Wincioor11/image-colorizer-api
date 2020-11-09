@@ -3,8 +3,6 @@ from flask_cors import CORS
 from flask_injector import FlaskInjector
 from injector import inject
 
-import jwt
-import base64
 from PIL import Image
 import io
 import tensorflow as tf
