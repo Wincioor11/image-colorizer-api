@@ -22,6 +22,10 @@ app.config['DEBUG'] = os.environ.get('DEBUG')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['ACCESS_KEY'] = os.environ.get('ACCESS_KEY')
 
+print('CONFIG: ',app.config['DEBUG'])
+print('CONFIG: ',app.config['SECRET_KEY'])
+print('CONFIG: ',app.config['ACCESS_KEY'])
+
 def verify_access(key: bytes):
     if key == app.config.get('ACCESS_KEY'):
         return True
