@@ -2,7 +2,6 @@ from keras.models import load_model
 from keras.preprocessing.image import img_to_array
 from keras.preprocessing.image import load_img
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2
 
 class ImageColorizerService():
