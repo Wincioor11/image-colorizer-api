@@ -64,4 +64,4 @@ def colorize(colorizer_service: ImageColorizerService):
 # setup flask dependency injection 
 FlaskInjector(app=app, modules=[configure])
 # run api
-app.run()
+app.run(port=os.environ.get('PORT', 33507)))
