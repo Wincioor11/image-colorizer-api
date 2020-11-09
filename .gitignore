@@ -109,10 +109,13 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+<<<<<<< HEAD
 .vscode
 .vscode/
 apivenv
 apivenv/
+=======
+>>>>>>> f27c9a5a7fa4c77056920a7462719755b99b7274
 
 # Spyder project settings
 .spyderproject
