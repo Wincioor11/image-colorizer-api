@@ -15,8 +15,8 @@ from dependencies import configure
 
 
 # initialize GPU for tensorflow (uncomment it only on local machine, not when deployed)
-gpu = tf.config.experimental.list_physical_devices('GPU')
-tf.config.experimental.set_memory_growth(gpu[0], True)
+# gpu = tf.config.experimental.list_physical_devices('GPU')
+# tf.config.experimental.set_memory_growth(gpu[0], True)
 
 app = flask.Flask(__name__)
 CORS(app)
