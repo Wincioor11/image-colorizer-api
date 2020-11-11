@@ -8,7 +8,7 @@ import io
 import base64
 import tensorflow as tf
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 
 from resourcelayer.ImageColorizerService import ImageColorizerService
@@ -21,16 +21,13 @@ from dependencies import configure
 
 app = flask.Flask(__name__)
 CORS(app)
-load_dotenv()
+# load_dotenv()
 app.config['DEBUG'] = os.environ.get('DEBUG')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['ACCESS_KEY'] = os.environ.get('ACCESS_KEY')
 app.config['PORT'] = os.environ.get('PORT')
 
 def verify_access(key: bytes):
-    print(f'{key=}')
-    skey = app.config.get('ACCESS_KEY')
-    print(f'{skey=}')
     if key == app.config.get('ACCESS_KEY'):
         return True
     else:
