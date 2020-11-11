@@ -6,7 +6,6 @@ from injector import inject
 from PIL import Image
 import io
 import base64
-import tensorflow as tf
 import os
 # from dotenv import load_dotenv
 
@@ -16,6 +15,7 @@ from dependencies import configure
 
 
 # initialize GPU for tensorflow (uncomment it only on local machine, not when deployed)
+# import tensorflow as tf
 # gpu = tf.config.experimental.list_physical_devices('GPU')
 # tf.config.experimental.set_memory_growth(gpu[0], True)
 
