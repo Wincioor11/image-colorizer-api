@@ -11,17 +11,21 @@ class ImageColorizerService():
     
     def colorize(self, img):
         img = np.asarray(img)
-        img, org_size = self.resize_image(img, size=(256,256))
+        org_size = img.shape[1], img.shape[0] # numpy's shape is transposed somehow :)
+        resize_flag = False
+        if (org_size != (256,256)):
+            resize_flag = True
+            img = self.resize_image(img, size=(256,256))
         img_gray, _ = self.rgb2lab(img)
         img_generated = self.generator.predict(np.expand_dims(img_gray,axis=0))
         img_rgb = self.lab2rgb(img_l=img_gray,img_ab=img_generated[0], size=(256,256,3))
-        img_resized, _ = self.resize_image(img_rgb, size=org_size)
-        return img_resized
+        if (resize_flag):
+            img_rgb = self.resize_image(img_rgb, size=org_size)
+        return img_rgb
 
     def resize_image(self, img: np.ndarray, size=(256,256)):
-        org_size = img.shape[1], img.shape[0] # numpy's shape is transposed somehow :)
         img = cv2.resize(img, size, interpolation=cv2.INTER_AREA)
-        return img, org_size
+        return img
     
     def rgb2lab(self, img: np.ndarray, normalize=True):
         # transform to lab

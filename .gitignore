@@ -140,3 +140,6 @@ static/images/
 
 #test
 api_test.py
+heroku_rsa
+heroku_rsa.pub
+.env
