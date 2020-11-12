@@ -12,6 +12,9 @@ import os
 
 from resourcelayer.ImageColorizerService import ImageColorizerService
 from dependencies import configure
+from gdrive_download import download_file_from_google_drive
+
+
 
 
 # initialize GPU for tensorflow (uncomment it only on local machine, not when deployed)
@@ -26,6 +29,12 @@ app.config['DEBUG'] = os.environ.get('DEBUG')
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
 app.config['ACCESS_KEY'] = os.environ.get('ACCESS_KEY')
 app.config['PORT'] = os.environ.get('PORT')
+
+#Download large model file from google drive
+MODEL_PATH = 'static/trained_models/places365/generator_model_256_v3.h5'
+FILE_ID = os.environ.get('FILE_ID')
+if not os.path.isfile(MODEL_PATH):
+    download_file_from_google_drive(FILE_ID,MODEL_PATH)
 
 def verify_access(key: bytes):
     if key == app.config.get('ACCESS_KEY'):
