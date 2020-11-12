@@ -31,7 +31,7 @@ app.config['ACCESS_KEY'] = os.environ.get('ACCESS_KEY')
 app.config['PORT'] = os.environ.get('PORT')
 
 #Download large model file from google drive
-MODEL_PATH = 'model/generator_model_256_v3.h5'
+MODEL_PATH = 'generator_model_256_v3.h5'
 FILE_ID = os.environ.get('FILE_ID')
 if not os.path.isfile(MODEL_PATH):
     print('Model not found')
