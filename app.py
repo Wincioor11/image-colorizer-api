@@ -31,9 +31,10 @@ app.config['ACCESS_KEY'] = os.environ.get('ACCESS_KEY')
 app.config['PORT'] = os.environ.get('PORT')
 
 #Download large model file from google drive
-MODEL_PATH = 'static/trained_models/places365/generator_model_256_v3.h5'
+MODEL_PATH = 'model/generator_model_256_v3.h5'
 FILE_ID = os.environ.get('FILE_ID')
 if not os.path.isfile(MODEL_PATH):
+    print('Model not found')
     download_file_from_google_drive(FILE_ID,MODEL_PATH)
 
 def verify_access(key: bytes):

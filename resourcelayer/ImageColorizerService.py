@@ -5,7 +5,7 @@ import numpy as np
 import cv2
 
 class ImageColorizerService():
-    def __init__(self, generator_path: str ='static/trained_models/places365/generator_model_256_v3.h5'):
+    def __init__(self, generator_path: str ='model/generator_model_256_v3.h5'):
         self.generator = load_model(generator_path)
         self.generator.trainable = False
     
